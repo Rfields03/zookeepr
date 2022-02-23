@@ -1,0 +1,24 @@
+{
+  "name": "zookeepr",
+  "version": "1.0.0",
+  "description": "Set up and run a Node.js web server using Express.js, handle two types of GET requests using parameters and make the application production-ready and deploy it on Heroku",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rfields03/zookeepr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rfields03/zookeepr/issues"
+  },
+  "homepage": "https://github.com/Rfields03/zookeepr#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
