@@ -1,5 +1,7 @@
 const { animals } = require('./data/animals');
 const express = require('express');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -30,6 +32,11 @@ app.get('/api/animals/:id', (req, res) => {
   } else {
     res.send(404);
   }
+});
+
+app.post('/api/animals', (req, res) => {
+  console.log(req.body);
+  res.json(req.body);
 });
 
 app.listen(PORT, () => {
