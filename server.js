@@ -2,15 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const { animals } = require('./data/animals');
-const req = require('express/lib/request');
-const res = require('express/lib/response');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
 
 function filterByQuery(query, animalsArray) {
   let personalityTraitsArray = [];
@@ -109,10 +107,6 @@ app.get('/animals', (req, res) => {
 
 app.get('/zookeepers', (req, res) => {
   res.sendFile(path.join(__dirname, './public/zookeepers.html'));
-});
-
-app.get('/animals', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/animals.html'));
 });
 
 app.get('*', (req, res) => {
